@@ -1,0 +1,9 @@
+-> 0x12. C - Singly linked lists
+-> Tasks (7)
+-> (1) Print List
+-> (2) List length
+-> (3) Add node
+-> (4) Add node at the end
+-> (5) Free list
+-> (6) The Hare and the Tortoise
+-> (7) Real programmers can write assembly code in any language
