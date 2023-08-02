@@ -6,12 +6,12 @@
  */
 void free_listint2(listint_t **head)
 {	
+	listint_t *node_data;
+	
 	/* Return if the head is NULL */
 	if (head == NULL) {
 		return;
 	}
-
-	listint_t *node_data;
 
 	/*Traverse the nodes using their pointer */
 	while (*head)
