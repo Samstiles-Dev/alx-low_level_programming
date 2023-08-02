@@ -10,7 +10,6 @@
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {	
-	/* declare the variables and pointers */
 	unsigned int x_314;
 	listint_t *new_node_314;
 	listint_t *pointer_314 = *head;
