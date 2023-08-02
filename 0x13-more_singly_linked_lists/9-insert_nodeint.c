@@ -1,44 +1,51 @@
 #include "lists.h"
 
 /**
- * insert_nodeint_at_index - this function inserts a new node in a linked list listint_t
- * @head: a pointer to the first node in the linked list listint_t
- * @idx: an index where the new node is added
- * @n: a data to insert in the new node
+ * insert_nodeint_at_index - inserts a new node in a linked list,
+ * at a given position
+ * @head: pointer to the first node in the list
+ * @idx: index where the new node is added
+ * @n: data to insert in the new node
  *
- * Return: this function returns a pointer to the new node, or NULL
+ * Return: pointer to the new node, or NULL
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
-{	
-	unsigned int x_314;
-	listint_t *new_node_314;
-	listint_t *pointer_314 = *head;
+{
+	// Create a new node
+    listint_t *newNode = (listint_t *)malloc(sizeof(listint_t));
+    if (newNode == NULL) {
+        printf("Memory allocation failed.\n");
+        return NULL;
+    }
 
-	new_node_314 = malloc(sizeof(listint_t));
-	if (!new_node_314 || !head)
-		return (NULL);
+    newNode->n = n;
 
-	new_node_314->n = n;
-	new_node_314->next = NULL;
+    // If the index is 0, insert at the beginning
+    if (idx == 0) {
+        newNode->next = *head;
+        *head = newNode;
+        return newNode;
+    }
 
-	if (idx == 0)
-	{
-		new_node_314->next = *head;
-		*head = new_node_314;
-		return (new_node_314);
-	}
+    // Traverse the list to find the previous node
+    listint_t *prev = *head;
+    for (unsigned int i = 0; i < idx - 1; i++) {
+        if (prev == NULL) {
+            // Index out of bounds, cannot insert
+            free(newNode);
+            return NULL;
+        }
+        prev = prev->next;
+    }
 
-	for (x_314 = 0; pointer_314 && x_314 < idx; x_314++)
-	{
-		if (x_314 == idx - 1)
-		{
-			new_node_314->next = temp->next;
-			pointer_314->next = new_node_314;
-			return (new_node_314);
-		}
-		else
-			pointer_314 = pointer_314->next;
-	}
+    // If prev is NULL, index is out of bounds
+    if (prev == NULL) {
+        free(newNode);
+        return NULL;
+    }
 
-	return (NULL);
+    newNode->next = prev->next;
+    prev->next = newNode;
+
+    return newNode;
 }
