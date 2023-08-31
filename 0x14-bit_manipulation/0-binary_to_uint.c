@@ -10,7 +10,7 @@ unsigned int binary_to_uint(const char *b)
 {
 	/* variable declaration */ 
 	int num_221;
-	unsigned int decimal_number_32 = 0;
+	unsigned int decimal_numeber_32 = 0;
 
 	if (!b)
 	{
