@@ -76,25 +76,25 @@ void print_magic(unsigned char *e_ident)
  */
 void print_class(unsigned char *e_ident)
 {
-    /* Printf */
-    printf(" Class: ");
-    
-    if (e_ident[EI_CLASS] == ELFCLASSNONE)
-    {
-        printf("none\n");
-    }
-    else if (e_ident[EI_CLASS] == ELFCLASS32)
-    {
-        printf("ELF32\n");
-    }
-    else if (e_ident[EI_CLASS] == ELFCLASS64)
-    {
-        printf("ELF64\n");
-    }
-    else
-    {
-        printf("<unknown: %x>\n", e_ident[EI_CLASS]);
-    }
+	/* Printf */
+	printf(" Class: ");
+	
+	if (e_ident[EI_CLASS] == ELFCLASSNONE)
+	{
+		printf("none\n");
+	}
+	else if (e_ident[EI_CLASS] == ELFCLASS32)
+	{
+		printf("ELF32\n");
+	}
+	else if (e_ident[EI_CLASS] == ELFCLASS64)
+	{
+		printf("ELF64\n");
+	}
+	else
+	{
+		printf("<unknown: %x>\n", e_ident[EI_CLASS]);
+	}
 }
 
 
