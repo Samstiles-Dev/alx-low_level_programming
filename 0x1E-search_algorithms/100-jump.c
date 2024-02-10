@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * print_range - function to print at each check
+ * print_range - helper func to print at each check
  * @i: index before jump
  * @j: index after jump
  */
@@ -11,7 +11,7 @@ void print_range(size_t i, size_t j)
 }
 
 /**
- * print_i - function to print idx each check
+ * print_i - helper func to print idx each check
  * @array: array
  * @i: index checked
  */
@@ -21,7 +21,7 @@ void print_i(int *array, size_t i)
 }
 
 /**
- * jump_search - func to find square root, jump steps to find match, end linear search
+ * jump_search - find square root, jump steps to find match, end linear search
  * @array: given array of ints
  * @size: size of array
  * @value: value to search for
@@ -51,10 +51,10 @@ int jump_search(int *array, size_t size, int value)
 			}
 			return (-1);
 		}
-		if (j + _jumps + _jumps > size)
+		if (j + jumps + jumps > size)
 		{
 			print_i(array, j);
-			print_range(j, j + _jumps);
+			print_range(j, j + jumps);
 			while (j < size)
 			{
 				print_i(array, j);
@@ -66,7 +66,7 @@ int jump_search(int *array, size_t size, int value)
 
 		}
 		i = j;
-		j += _jumps;
+		j += jumps;
 	}
 	return (-1);
 }
