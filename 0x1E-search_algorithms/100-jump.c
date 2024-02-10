@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * print_range - helper func to print at each check
+ * print_range - function to print at each check
  * @i: index before jump
  * @j: index after jump
  */
@@ -29,7 +29,7 @@ void print_i(int *array, size_t i)
  */
 int jump_search(int *array, size_t size, int value)
 {
-	size_t _jumps = sqrt(size);
+	size_t jumps = sqrt(size);
 	size_t i = 0;
 	size_t j = 0;
 
